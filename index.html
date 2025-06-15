@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hommage à Papa Kone Daouda - Fête des Pères 2025</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap");
+
+      :root {
+        --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        --accent-gold: #d4af37;
+        --accent-gold-light: #f4d03f;
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.85);
+        --glass-bg: rgba(255, 255, 255, 0.08);
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --shadow-subtle: 0 8px 32px rgba(0, 0, 0, 0.12);
+        --shadow-elevated: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--primary-gradient);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .background-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.03;
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            var(--accent-gold) 2px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            var(--accent-gold) 1px,
+            transparent 1px
+          );
+        background-size: 60px 60px, 40px 40px;
+        z-index: -1;
+      }
+
+      .main-container {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        padding: 60px 50px;
+        text-align: center;
+        box-shadow: var(--shadow-elevated);
+        border: 1px solid var(--glass-border);
+        max-width: 800px;
+        width: 90%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .main-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.08),
+          transparent
+        );
+        animation: slideShine 4s infinite;
+      }
+
+      @keyframes slideShine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      .header-section {
+        margin-bottom: 40px;
+      }
+
+      .date-badge {
+        display: inline-block;
+        background: rgba(212, 175, 55, 0.15);
+        color: var(--accent-gold);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+      }
+
+      .main-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        color: var(--text-primary);
+        margin-bottom: 15px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        margin-bottom: 30px;
+      }
+
+      .honoree-section {
+        background: rgba(212, 175, 55, 0.1);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .honoree-name {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        color: var(--accent-gold);
+        margin-bottom: 20px;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .honoree-name::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--accent-gold),
+          transparent
+        );
+        border-radius: 2px;
+      }
+
+      .tribute-text {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-weight: 300;
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      .qualities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .quality-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 25px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .quality-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow-subtle);
+      }
+
+      .quality-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .quality-title {
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .quality-desc {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 40px 0;
+      }
+
+      .btn {
+        padding: 16px 32px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.05rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 0.3px;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--accent-gold),
+          var(--accent-gold-light)
+        );
+        color: #1a1a1a;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+      }
+
+      .floating-elements {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .floating-element {
+        position: absolute;
+        color: var(--accent-gold);
+        opacity: 0.1;
+        animation: float 8s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+
+      .photo-gallery {
+        margin: 50px 0;
+        padding: 40px 0;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .gallery-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--accent-gold);
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+
+      .photos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .photo-frame {
+        position: relative;
+        background: var(--glass-bg);
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid var(--glass-border);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .photo-frame::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .photo-frame:hover::before {
+        left: 100%;
+      }
+
+      .photo-frame:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        border-color: rgba(212, 175, 55, 0.3);
+      }
+
+      .photo-wrapper {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .photo-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .photo-frame:hover .photo-image {
+        transform: scale(1.05);
+      }
+
+      .photo-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .photo-frame:hover .photo-overlay {
+        transform: translateY(0);
+      }
+
+      .photo-caption {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .photo-description {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        line-height: 1.4;
+      }
+
+      .photo-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        padding: 20px;
+      }
+
+      .photo-modal-content {
+        max-width: 90vw;
+        max-height: 90vh;
+        position: relative;
+      }
+
+      .photo-modal img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+      }
+
+      .photo-modal-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .photo-modal-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+
+      .signature {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-style: italic;
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal-content {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-elevated);
+      }
+
+      .modal-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--accent-gold);
+        margin-bottom: 20px;
+      }
+
+      .modal-text {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: 768px) {
+        .main-container {
+          padding: 40px 30px;
+          margin: 20px;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+
+      .celebration-effect {
+        position: fixed;
+        pointer-events: none;
+        z-index: 999;
+      }
+
+      .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: var(--accent-gold);
+        border-radius: 50%;
+        animation: particleFloat 2s ease-out forwards;
+      }
+
+      @keyframes particleFloat {
+        0% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.3) translateY(-100px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-pattern"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <div class="main-container">
+      <div class="header-section">
+        <div class="date-badge">Fête des Pères 2025</div>
+        <h1 class="main-title">Hommage à un Père Exceptionnel</h1>
+        <p class="subtitle">
+          Une célébration dédiée à celui qui nous inspire chaque jour
+        </p>
+      </div>
+
+      <div class="honoree-section">
+        <h2 class="honoree-name">Kone Daouda</h2>
+        <p class="tribute-text">
+          À l'homme qui a su allier sagesse et bienveillance, force et
+          tendresse. Votre dévouement et votre amour inconditionnel sont les
+          fondations sur lesquelles nous construisons nos rêves et nos espoirs.
+        </p>
+      </div>
+
+      <div class="qualities-grid">
+        <div class="quality-card" onclick="showQualityMessage('wisdom')">
+          <span class="quality-icon">🧠</span>
+          <div class="quality-title">Sagesse</div>
+          <div class="quality-desc">
+            Vos conseils nous guident vers les meilleures décisions
+          </div>
+        </div>
+        <div class="quality-card" onclick="showQualityMessage('strength')">
+          <span class="quality-icon">💪</span>
+          <div class="quality-title">Force</div>
+          <div class="quality-desc">
+            Votre détermination nous inspire à persévérer
+          </div>
+        </div>
+        <div class="quality-card" onclick="showQualityMessage('love')">
+          <span class="quality-icon">❤️</span>
+          <div class="quality-title">Amour</div>
+          <div class="quality-desc">
+            Votre affection inconditionnelle nous porte
+          </div>
+        </div>
+        <div class="quality-card" onclick="showQualityMessage('support')">
+          <span class="quality-icon">🤝</span>
+          <div class="quality-title">Soutien</div>
+          <div class="quality-desc">
+            Toujours présent dans nos moments importants
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn btn-primary" onclick="celebrate()">
+          <span>🎉</span> Célébrer Papa
+        </button>
+        <button class="btn btn-secondary" onclick="showTributeModal()">
+          <span>💝</span> Message Personnel
+        </button>
+      </div>
+
+      <div class="signature">
+        Avec tout notre amour, notre respect et notre gratitude éternelle
+      </div>
+    </div>
+
+    <!-- Modal pour les photos -->
+    <div id="photoModal" class="photo-modal">
+      <div class="photo-modal-content">
+        <button class="photo-modal-close" onclick="closePhotoModal()">
+          &times;
+        </button>
+        <img id="modalPhoto" src="" alt="Photo agrandie" />
+      </div>
+    </div>
+
+    <!-- Modal pour les messages -->
+    <div id="tributeModal" class="modal">
+      <div class="modal-content">
+        <h3 class="modal-title">Message du Cœur</h3>
+        <p class="modal-text" id="modalText"></p>
+        <button class="btn btn-primary" onclick="closeTributeModal()">
+          Fermer
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Messages personnalisés
+      const tributeMessages = [
+        "Papa Kone, votre héritage de valeurs et d'intégrité nous accompagne dans chaque étape de notre vie.",
+        "Votre exemple de persévérance et de dignité nous inspire à devenir de meilleures personnes chaque jour.",
+        "Merci d'avoir fait de notre foyer un havre de paix, de rires et d'amour inconditionnel.",
+        "Votre sagesse éclaire notre chemin et vos encouragements nous donnent la force d'avancer.",
+        "Père exemplaire, mentor bienveillant, vous êtes notre plus grande source d'inspiration.",
+      ];
+
+      const qualityMessages = {
+        wisdom:
+          "Votre sagesse transcende les générations. Chaque conseil que vous partagez devient un trésor que nous chérissons.",
+        strength:
+          "Votre force n'est pas seulement physique, elle réside dans votre caractère et votre résilience face aux défis.",
+        love: "L'amour que vous nous portez est notre plus grande richesse, notre ancrage le plus solide.",
+        support:
+          "Votre soutien indéfectible nous donne l'assurance de pouvoir surmonter tous les obstacles.",
+      };
+
+      // Initialisation des éléments flottants
+      function createFloatingElements() {
+        const container = document.getElementById("floatingElements");
+        const symbols = ["★", "♦", "◆", "●", "■"];
+
+        for (let i = 0; i < 15; i++) {
+          const element = document.createElement("div");
+          element.className = "floating-element";
+          element.innerHTML =
+            symbols[Math.floor(Math.random() * symbols.length)];
+          element.style.left = Math.random() * 100 + "%";
+          element.style.top = Math.random() * 100 + "%";
+          element.style.fontSize = Math.random() * 20 + 15 + "px";
+          element.style.animationDelay = Math.random() * 8 + "s";
+          element.style.animationDuration = Math.random() * 4 + 6 + "s";
+          container.appendChild(element);
+        }
+      }
+
+      // Effet de célébration sophistiqué
+      function celebrate() {
+        createParticleEffect();
+        animateMainTitle();
+
+        if (navigator.vibrate) {
+          navigator.vibrate([100, 50, 100, 50, 200]);
+        }
+      }
+
+      function createParticleEffect() {
+        const colors = ["#d4af37", "#f4d03f", "#ffffff", "#2a5298"];
+
+        for (let i = 0; i < 30; i++) {
+          setTimeout(() => {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+            particle.style.left = Math.random() * window.innerWidth + "px";
+            particle.style.top = window.innerHeight + "px";
+            particle.style.background =
+              colors[Math.floor(Math.random() * colors.length)];
+
+            const effect = document.createElement("div");
+            effect.className = "celebration-effect";
+            effect.appendChild(particle);
+            document.body.appendChild(effect);
+
+            setTimeout(() => effect.remove(), 2000);
+          }, i * 50);
+        }
+      }
+
+      function animateMainTitle() {
+        const title = document.querySelector(".main-title");
+        title.style.transform = "scale(1.05)";
+        title.style.textShadow = "0 4px 30px rgba(212, 175, 55, 0.6)";
+
+        setTimeout(() => {
+          title.style.transform = "scale(1)";
+          title.style.textShadow = "0 4px 20px rgba(0, 0, 0, 0.3)";
+        }, 600);
+      }
+
+      // Gestion des photos
+      const photoData = {
+        photo1: {
+          src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCADgAOADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//2Q==",
+          alt: "Papa Kone - Moments de Tendresse",
+        },
+        photo2: {
+          src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCADgAOADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//2Q==",
+          alt: "Famille Kone Réunie",
+        },
+      };
+
+      function openPhotoModal(photoId) {
+        const modal = document.getElementById("photoModal");
+        const modalPhoto = document.getElementById("modalPhoto");
+        const photo = photoData[photoId];
+
+        modalPhoto.src = photo.src;
+        modalPhoto.alt = photo.alt;
+        modal.style.display = "flex";
+      }
+
+      function closePhotoModal() {
+        const modal = document.getElementById("photoModal");
+        modal.style.display = "none";
+      }
+
+      // Gestion des modales
+      function showTributeModal() {
+        const modal = document.getElementById("tributeModal");
+        const modalText = document.getElementById("modalText");
+        const randomMessage =
+          tributeMessages[Math.floor(Math.random() * tributeMessages.length)];
+
+        modalText.textContent = randomMessage;
+        modal.style.display = "flex";
+      }
+
+      function showQualityMessage(quality) {
+        const modal = document.getElementById("tributeModal");
+        const modalText = document.getElementById("modalText");
+
+        modalText.textContent = qualityMessages[quality];
+        modal.style.display = "flex";
+      }
+
+      function closeTributeModal() {
+        const modal = document.getElementById("tributeModal");
+        modal.style.display = "none";
+      }
+
+      // Event listeners
+      document.addEventListener("click", function (e) {
+        const tributeModal = document.getElementById("tributeModal");
+        const photoModal = document.getElementById("photoModal");
+
+        if (e.target === tributeModal) {
+          closeTributeModal();
+        }
+        if (e.target === photoModal) {
+          closePhotoModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeTributeModal();
+          closePhotoModal();
+        }
+      });
+
+      // Initialisation
+      document.addEventListener("DOMContentLoaded", function () {
+        createFloatingElements();
+      });
+    </script>
+  </body>
+</html>
